@@ -1,0 +1,201 @@
+/* Custom Styles for Gourmet Explorer */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0ea5e9;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0284c7;
+}
+
+/* Recipe card hover effect */
+.recipe-card {
+    transition: all 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Shimmer loading effect */
+.shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Staggered animation for recipe cards */
+.stagger-animate {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.stagger-animate.show {
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse animation for favorite button */
+.pulse-heart {
+    animation: pulse-heart 1s cubic-bezier(0.4, 0, 0.6, 1) 1;
+}
+
+@keyframes pulse-heart {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* Toast animation */
+.toast-show {
+    animation: toast-in-out 3s forwards;
+}
+
+@keyframes toast-in-out {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    85% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+}
+
+/* Page transition */
+.page-transition {
+    animation: page-fade-in 0.5s ease-out;
+}
+
+@keyframes page-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Ingredient list animation */
+.ingredient-item {
+    transition: all 0.3s ease;
+}
+
+.ingredient-item:hover {
+    background-color: #f0f9ff;
+    transform: translateX(5px);
+}
+
+/* Hero section background animation */
+.bg-animate {
+    animation: bg-pan 30s ease infinite alternate;
+    background-size: 200% 200%;
+}
+
+@keyframes bg-pan {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Underline animation for links */
+.hover-underline {
+    position: relative;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.hover-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Mobile menu animation */
+.mobile-menu-open {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+/* Navbar scroll effect */
+.navbar-scrolled {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Favorite button animation */
+@keyframes favorite-added {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.favorite-added {
+    animation: favorite-added 0.5s ease-in-out;
+}
